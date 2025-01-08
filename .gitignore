@@ -1,0 +1,14 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Obsidian-specific files
+.obsidian/
+.obsidian/workspace
+.obsidian/cache
+.obsidian/app.json
+.obsidian/appearance.json
+
+# Obsidian Sync and Backup
+.sync/
+.obsidian/plugins/obsidian-backup/config.json
