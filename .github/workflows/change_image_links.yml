@@ -1,16 +1,17 @@
 name: Update image paths
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    types: [closed]  # Trigger when a PR is closed
+    branches: [main]  # Only for PRs targeting the "main" branch
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
 jobs:
   fix-markdown-images:
+    # Only run this job if the PR was merged (not just closed)
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
