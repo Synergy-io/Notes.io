@@ -1,0 +1,54 @@
+name: Update image paths
+
+on:
+  pull_request:
+    types: [closed]  # Trigger when a PR is closed
+    branches: [main]  # Only for PRs targeting the "main" branch
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+  fix-markdown-images:
+    # Only run this job if the PR was merged (not just closed)
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main  # main branch 
+
+      - name: Pull latest changes
+        run: |
+          git pull origin main
+      - name: Fix image paths
+        run: |
+          repo_url="https://raw.githubusercontent.com/${{ github.repository }}/main/assets" 
+          find . -name "*.md" | while read file; do
+            # Step 1: Replace spaces in Obsidian image links with %20
+            sed -i ':loop; s/\(!\[\[[^]]*\) \([^]]*\]\]\)/\1%20\2/; t loop' "$file"
+            
+            # Step 2: Convert Obsidian links to standard Markdown links
+            sed -i -E "s#\!\[\[([^]]+)\]\]#\!\[\](${repo_url}/\1)#g" "$file"
+          done
+
+      - name: Debug changed files
+        run: |
+          echo "Changed files:"
+          git status --porcelain | awk '{print $2}'
+
+      - name: Debug file changes
+        run: |
+          echo "Changes made to files:"
+          git diff
+          
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "Fix image paths for GitHub"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push
