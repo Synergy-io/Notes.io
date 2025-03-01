@@ -1,9 +1,9 @@
 #### 1. Embedding or referencing
 ##### ==Data that will be accessed together, should be stored together==
 
-![[Pasted image 20250228220404.png]]
+![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250228220404.png)
 #### 2. Guidelines
-![[Pasted image 20250228223028.png]]
+![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250228223028.png)
 #### 3. one to one relationship
 - mostly modeled as an attribute
 - can group related fields in sub-document

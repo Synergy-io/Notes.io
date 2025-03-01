@@ -66,10 +66,10 @@
 	- should they be updated immediately or they can be updated at a later time
 #### 5. Schema versioning pattern
 - deal with changes of schema
-- add field for schema version![[Pasted image 20250301113847.png]]
+- add field for schema version![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301113847.png)
 - how to update to new shape
 	- by application
 	- by background task
 - before update schema, need to update application so it can read every schema.
 	- no downtime
-- ![[Pasted image 20250301114221.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301114221.png)

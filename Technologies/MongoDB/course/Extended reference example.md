@@ -1,9 +1,9 @@
- - have to lookup for product type for search review by book type query![[Pasted image 20250301111825.png]]
- - so embed required parts![[Pasted image 20250301111832.png]]
+ - have to lookup for product type for search review by book type query![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301111825.png)
+ - so embed required parts![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301111832.png)
 - improves read performance
 ---
-- ![[Pasted image 20250301112022.png]]
-- ![[Pasted image 20250301112033.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301112022.png)
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301112033.png)
 
 ---
 #### Pipeline for this

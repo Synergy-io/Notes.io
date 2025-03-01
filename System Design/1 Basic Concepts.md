@@ -8,7 +8,7 @@
 	- [[#Consistency]]
 	- [[#Availability]]
 	- [[#Partition Tolerance]]
-![[Pasted image 20241124151440.png]]
+![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020241124151440.png)
 ##### Consistency
 -  all nodes see the same data at the same time
 - client perceives that a set of operations has occurred all at once
@@ -57,7 +57,7 @@ Given that networks aren't completely reliable, you must tolerate partitions in 
 #### Availability patterns - Fail-Over
 
 - Availability is often quantified by uptime (or downtime) as a percentage of time the service is available. Availability is generally measured in number of 9s—a service with 99.99% availability is described as having four 9s.
-- ![[Pasted image 20250110112055.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250110112055.png)
 - https://www.filecloud.com/blog/2015/12/architectural-patterns-for-high-availability/
 #### Availability in parallel vs in sequence
 
