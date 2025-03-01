@@ -33,15 +33,15 @@ jobs:
             sed -i -E "s#\!\[\[([^]]+)\]\]#\!\[\](${repo_url}/\1)#g" "$file"
           done
 
-      # - name: Debug changed files
-      #   run: |
-      #     echo "Changed files:"
-      #     git status --porcelain | awk '{print $2}'
+      - name: Debug changed files
+        run: |
+          echo "Changed files:"
+          git status --porcelain | awk '{print $2}'
 
-      # - name: Debug file changes
-      #   run: |
-      #     echo "Changes made to files:"
-      #     git diff
+      - name: Debug file changes
+        run: |
+          echo "Changes made to files:"
+          git diff
           
       - name: Commit and push changes
         run: |
