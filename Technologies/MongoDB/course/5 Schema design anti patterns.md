@@ -20,7 +20,7 @@
 
 - this increase the size of working set
 - that impact the performance
-- ![[Pasted image 20250302072605.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250302072605.png)
 - WT internal cache size = 50%(RAM - 1 GB)  or 256 MB
 	- whatever is larger of them
 - logical data size = # of documents x average document size
@@ -34,11 +34,11 @@
 - so we will have to separate the document so that separately accessed parts are stored separately
 
 ## Example
-- ![[Pasted image 20250302073200.png]]
-- ![[Pasted image 20250302073232.png]]
-- ![[Pasted image 20250302073245.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250302073200.png)
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250302073232.png)
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250302073245.png)
 - Solution: 
-- ![[Pasted image 20250302073327.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250302073327.png)
 
 ---
 # 3. Massive number collections
@@ -115,9 +115,9 @@ since: "$accesses.since" }
 		- default 3
 		- case insensitive: 1,2
 			- 1 - compare base chars ony
-			- ![[Pasted image 20250302081530.png]]
+			- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250302081530.png)
 			- 2 - include secondary differences and diacritics
-			- ![[Pasted image 20250302081615.png]]
+			- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250302081615.png)
 		
 - can make index and query has same collation
 	- and specify collation in collation

@@ -19,11 +19,11 @@ https://learn.mongodb.com/learn/course/advanced-schema-design-patterns
 - need to add
 	- array of references
 	- docType field
-- ![[Pasted image 20250301192115.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301192115.png)
 - see book references itself
 - now ==have to index relatedTo array==
-- ![[Pasted image 20250301192258.png]]
-- ![[Pasted image 20250301192315.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301192258.png)
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301192315.png)
 ---
 ## Variant 2
 - use overloaded field
@@ -32,30 +32,30 @@ https://learn.mongodb.com/learn/course/advanced-schema-design-patterns
 	- identify document
 	- and to enable efficient queries
 -  used to ==model one to many relationships==
-- ![[Pasted image 20250301192637.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301192637.png)
 - sc_id : single collection id
 	- used to identify book
 	- and review with book
 - ==need to index with sc_id==
 - user regex to query all related to sc_id
 - to get books and reviews
-	- ![[Pasted image 20250301192918.png]]
+	- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301192918.png)
 - to get only the reviews
-	- ![[Pasted image 20250301192934.png]]
+	- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301192934.png)
 ---
 # 2. Subset pattern
 - when document contains large number of embedded documents
 - but only a small portion of them is frequently used
 
 - MongoDB default storage engine
-	- ![[Pasted image 20250301204226.png]]
+	- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301204226.png)
 - keeps data accessed frequently in memory
 	- this set is called "wired tiger internal cache"
 - ideally working set should fit in the cache
 	- set of indexes and documents frequently used by application
-	-  ![[Pasted image 20250301204527.png]]
+	-  ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301204527.png)
 	- if not, performance is impacted
-	- ![[Pasted image 20250301204614.png]]
+	- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301204614.png)
 - use this pattern for cases like that
 
 - reduces document size 
@@ -67,7 +67,7 @@ https://learn.mongodb.com/learn/course/advanced-schema-design-patterns
 	- and small subset of those documents is used by application
 
 ## Example
-![[Pasted image 20250301204959.png]]
+![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301204959.png)
 - duplicate data of 3 documents here
 - but they are unlikely to change
 - trade-off : duplication vs performance
@@ -128,8 +128,8 @@ db.books.updateMany({}, update_reviews_array_pipeline);
 - track user views of a book
 - query for
 	- monthly views for a book
-	- ![[Pasted image 20250301213122.png]]
-- ![[Pasted image 20250301213227.png]]
+	- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301213122.png)
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301213227.png)
 - avoid creating unbounded array in each bucket document
 	- use schema validation tool to that
 	- add application level logic
@@ -243,7 +243,7 @@ db.reviews.updateMany(
 - then delete documents in main db
 ## Example
 - archive reviews that are no longer accessed
-- ![[Pasted image 20250301222014.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301222014.png)
 - use extended reference pattern
-- ![[Pasted image 20250301222041.png]]
+- ![](https://raw.githubusercontent.com/Synergy-io/Notes.io/main/assets/Pasted%20image%2020250301222041.png)
 - 
